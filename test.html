@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body , html{
+            margin: o;
+            height: 100%;
+            }
+            body{
+                display: flex;
+justify-content: center;
+align-items: center;
+            }
+            canvas{
+               border: 1px solid gray;
+            }
+    </style>
 </head>
 <body>
-    <h1> даров!</h1>
+    <canvas id="sandbox" width="300" height="300"></canvas>
+    <script>
+let canvas = document.getElementById("sandbox"),
+context = canvas.getContext("2d"),
+line = new Path2D();
+
+line.moveTo(0, 0);
+line.lineTo(300, 300);
+
+context.lineWidth = 5;
+context.stroke(line);
+
+context.fillStyle = "red";
+context.fillRect(0, 0, 200, 200);
+
+context.fillStyle = "rgba(0, 255, 0, 0.5)";
+context.fillRect(100, 100, 300, 300);
+
+    </script>
 </body>
 </html>
